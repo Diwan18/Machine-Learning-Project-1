@@ -305,6 +305,13 @@ cluster_labels2 = pd.Series(hc_2clust.labels_)
 # from sklearn import metrics
 metrics.silhouette_score(df_pipelined, cluster_labels2)
 
+'''Alternatively, we can use:'''
+# **Calinski Harabasz:**
+metrics.calinski_harabasz_score(df_pipelined, cluster_labels2)
+
+# **Davies-Bouldin Index:**
+metrics.davies_bouldin_score(df_pipelined, cluster_labels2)
+
 # Concate the Results with data
 df_2clust = pd.concat([cluster_labels2, df_clean], axis = 1)
 
