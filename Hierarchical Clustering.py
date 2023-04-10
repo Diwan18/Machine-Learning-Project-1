@@ -318,9 +318,12 @@ df_2clust.iloc[:, 1:7].groupby(df_2clust.cluster).mean()
 df_3clust = pd.concat([df.Univ, cluster_labels2, df_clean], axis = 1)
 
 df_3clust = df_3clust.rename(columns = {0:'cluster'})
-df_3clust.to_csv('University.csv', encoding = 'utf-8')
 
 df_3clust['cluster'] = df_3clust['cluster'].replace([0, 1], ['Level 1', 'Level 2'])
+
+df_3clust.to_csv('University.csv', encoding = 'utf-8')
+
+
 
 import os
 os.getcwd()
